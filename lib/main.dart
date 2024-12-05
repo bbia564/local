@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:local_clock/pages/about/about_binding.dart';
 import 'package:local_clock/pages/about/about_view.dart';
+import 'package:local_clock/pages/about/monent.dart';
 import 'package:local_clock/pages/local_clock/local_clock_binding.dart';
 import 'package:local_clock/pages/local_clock/local_clock_view.dart';
+import 'package:local_clock/pages/local_tools/local_tool_binding.dart';
+import 'package:local_clock/pages/local_tools/local_tool_view.dart';
 
 Color primaryColor = const Color(0xffe2ff00);
 Color bgColor = const Color(0xfff8f8f8);
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Clock,
-      initialRoute: '/localClock',
+      initialRoute: '/main',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -73,6 +76,8 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Clock = [
+  GetPage(name: '/main', page: () => const LocalToolView(), binding: LocalToolBinding()),
   GetPage(name: '/localClock', page: () => LocalClockPage(), binding: LocalClockBinding()),
+  GetPage(name: '/monent', page: () => const Monent()),
   GetPage(name: '/about', page: () => AboutPage(), binding: AboutBinding())
 ];

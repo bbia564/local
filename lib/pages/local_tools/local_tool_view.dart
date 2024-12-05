@@ -11,8 +11,8 @@ class LocalToolView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.smith.value
-              ? const CircularProgressIndicator(color: Colors.orange)
+          () => controller.mante.value
+              ? const CircularProgressIndicator(color: Colors.lightGreenAccent)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class LocalToolView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.rqyim();
+              controller.nouixl();
             },
             icon: const Icon(
               Icons.restart_alt,
